@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>About Me</title>
+
+    <style>
+        .list-item{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="img"></div>
+    <h1>About Me</h1>
+    <ul>
+        <li>Nickname: <span id="nickname"></span>
+        <li>Favorites: <span id="favorites"></span>
+        <li>Hometown: <span id="hometown"></span>
+    </ul>
+
+    <script>
+        const imgparent = document.getElementById('img')
+        const body = document.body;
+        body.style.fontFamily = "Arial, sans-serif";
+
+        const Pablo = [
+            {
+                nickname: 'Pablito',
+                favorites: 'Seafood Boil',
+                hometown: 'Phoenix, Arizona',
+            }
+        ]
+
+        const img = document.createElement('img');
+        img.src = '../ex1/image/image1.jpg';
+        img.width = '300';
+        img.length = '300';
+        imgparent.append(img)
+        
+        const nicknamespan = document.getElementById('nickname');
+        const favoritesspan = document.getElementById('favorites');
+        const hometown = document.getElementById('hometown')
+
+        nicknamespan.innerHTML = Pablo[0].nickname;
+        favoritesspan.innerHTML = Pablo[0].favorites;
+        hometown.innerHTML = Pablo[0].hometown;
+
+        const lis = document.querySelectorAll('li');
+
+        for(let i = 0; i < lis.length; i++){
+            lis[i].className = 'list-item'
+        }
+    </script>
+</body>
+
+</html>
